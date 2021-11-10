@@ -29,8 +29,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: igorolivei/github-actions-deploy:latest
     steps:
     - uses: actions/checkout@v2
 
@@ -42,6 +40,12 @@ jobs:
         Parameters.threads": ${{github.event.inputs.threads}}
         Parameters.url: https://github.com/${{github.repository}}
     
-    - name: test kubectl
+    - uses: azure/setup-kubectl@v1
+      with:
+        version: 'latest'
+        id: install
+
+    - name: Test kubectl
       run: |
         kubectl version
+  
