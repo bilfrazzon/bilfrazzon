@@ -36,8 +36,8 @@ jobs:
       with:
         files: 'employee.json'
       env:
-        username: Parameters.${{github.event.inputs.hostname}}
-        url: Parameters.https://github.com/${{github.repository}}
+        Parameters.username: ${{github.event.inputs.hostname}}
+        Parameters.url: https://github.com/${{github.repository}}
   
 #   printInputs:
 #     runs-on: ubuntu-latest
