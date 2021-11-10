@@ -3,9 +3,9 @@
         "projectName": "jmeter-argocd",
         "argocdProject": "default",
         "namespace": "jmeter-argocd",
-        "duracao": "'400'",
-        "threads": "'1'",
-        "loops": "'1'",
-        "rampup": "'1'"
+        "duracao": "400",
+        "threads": "1",
+        "loops": "1",
+        "rampup": "1"
         }
 }
