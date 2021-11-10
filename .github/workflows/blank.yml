@@ -7,16 +7,26 @@ on:
     
   workflow_dispatch:
     inputs:
-      logLevel:
-        description: 'Log level'     
+      duracao:
+        description: 'Tempo de duração'     
         required: true
-        default: 'warning'
-      tags:
-        description: 'Test scenario tags' 
+        default: '300'
+      threads:
+        description: 'Qtd threads'     
+        required: true
+        default: '1'
+      rampup:
+        description: 'Qtd rampup'     
+        required: true
+        default: '300'        
+      loops:
+        description: 'Qtd Loops' 
 jobs:
   printInputs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "Log level: ${{ github.event.inputs.logLevel }}"
-        echo "Tags: ${{ github.event.inputs.tags }}" 
+        echo "Log level: ${{ github.event.inputs.duracao }}"
+        echo "Tags: ${{ github.event.inputs.threads }}" 
+        echo "Log level: ${{ github.event.inputs.rampup }}"
+        echo "Tags: ${{ github.event.inputs.loops }}"         
