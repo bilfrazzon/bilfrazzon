@@ -36,7 +36,7 @@ jobs:
       with:
         files: 'employee.json'
       env:
-        username: tcranz
+        username: ${{github.event.inputs.hostname}}
         url: https://github.com/${{github.repository}}
   
 #   printInputs:
