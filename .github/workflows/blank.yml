@@ -27,12 +27,27 @@ on:
         description: 'Qtd de Loops:' 
         default: '1'
 jobs:
-  printInputs:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: windows-latest
     steps:
-    - run: |
-        echo "Hostname: ${{ github.event.inputs.hostname }}"    
-        echo "Duração: ${{ github.event.inputs.duracao }}"
-        echo "Threads: ${{ github.event.inputs.threads }}" 
-        echo "Rampup: ${{ github.event.inputs.rampup }}"
-        echo "Loops: ${{ github.event.inputs.loops }}"         
+    - uses: actions/checkout@v2
+
+    - uses: microsoft/variable-substitution@v1 
+      with:
+        files: 'parameters.json'
+      env:
+        namespace": ${{ github.event.inputs.hostname }}
+        "duracao": ${{ github.event.inputs.duracao }}
+        "threads": ${{ github.event.inputs.threads }}
+        "loops": ${{ github.event.inputs.loops }}
+        "rampup": ${{ github.event.inputs.rampup }}
+  
+#   printInputs:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - run: |
+#         echo "Hostname: ${{ github.event.inputs.hostname }}"    
+#         echo "Duração: ${{ github.event.inputs.duracao }}"
+#         echo "Threads: ${{ github.event.inputs.threads }}" 
+#         echo "Rampup: ${{ github.event.inputs.rampup }}"
+#         echo "Loops: ${{ github.event.inputs.loops }}"         
