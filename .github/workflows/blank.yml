@@ -7,6 +7,10 @@ on:
     
   workflow_dispatch:
     inputs:
+      hostname:
+        description: 'Nome do hostname'     
+        required: true
+        default: 'gateway-mobile.load.mgensuite.com'    
       duracao:
         description: 'Tempo de duração'     
         required: true
@@ -18,9 +22,10 @@ on:
       rampup:
         description: 'Qtd rampup'     
         required: true
-        default: '300'        
+        default: '1'        
       loops:
         description: 'Qtd Loops' 
+        default: '1'
 jobs:
   printInputs:
     runs-on: ubuntu-latest
