@@ -36,11 +36,11 @@ jobs:
       with:
         files: 'parameters.json'
       env:
-        namespace": ${{ github.event.inputs.hostname }}
-        "duracao": ${{ github.event.inputs.duracao }}
-        "threads": ${{ github.event.inputs.threads }}
-        "loops": ${{ github.event.inputs.loops }}
-        "rampup": ${{ github.event.inputs.rampup }}
+        namespace: ${{ github.event.inputs.hostname }}
+        duracao: ${{ github.event.inputs.duracao }}
+        threads: ${{ github.event.inputs.threads }}
+        loops: ${{ github.event.inputs.loops }}
+        rampup: ${{ github.event.inputs.rampup }}
   
 #   printInputs:
 #     runs-on: ubuntu-latest
