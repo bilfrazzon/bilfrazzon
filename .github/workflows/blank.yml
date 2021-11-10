@@ -8,30 +8,31 @@ on:
   workflow_dispatch:
     inputs:
       hostname:
-        description: 'Nome do hostname'     
+        description: 'Nome do hostname:'     
         required: true
         default: 'gateway-mobile.load.mgensuite.com'    
       duracao:
-        description: 'Tempo de duração'     
+        description: 'Tempo de duração:'     
         required: true
         default: '300'
       threads:
-        description: 'Qtd threads'     
+        description: 'Qtd de threads:'     
         required: true
         default: '1'
       rampup:
-        description: 'Qtd rampup'     
+        description: 'Qtd de rampup:'     
         required: true
         default: '1'        
       loops:
-        description: 'Qtd Loops' 
+        description: 'Qtd de Loops:' 
         default: '1'
 jobs:
   printInputs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "Log level: ${{ github.event.inputs.duracao }}"
-        echo "Tags: ${{ github.event.inputs.threads }}" 
-        echo "Log level: ${{ github.event.inputs.rampup }}"
-        echo "Tags: ${{ github.event.inputs.loops }}"         
+        echo "Hostname: ${{ github.event.inputs.hostname }}"    
+        echo "Duração: ${{ github.event.inputs.duracao }}"
+        echo "Threads: ${{ github.event.inputs.threads }}" 
+        echo "Rampup: ${{ github.event.inputs.rampup }}"
+        echo "Loops: ${{ github.event.inputs.loops }}"         
