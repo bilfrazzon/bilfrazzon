@@ -37,14 +37,4 @@ jobs:
         files: 'employee.json'
       env:
         Parameters.username: ${{github.event.inputs.hostname}}
-        Parameters.url: https://github.com/${{github.repository}}
-  
-#   printInputs:
-#     runs-on: ubuntu-latest
-#     steps:
-#     - run: |
-#         echo "Hostname: ${{ github.event.inputs.hostname }}"    
-#         echo "Duração: ${{ github.event.inputs.duracao }}"
-#         echo "Threads: ${{ github.event.inputs.threads }}" 
-#         echo "Rampup: ${{ github.event.inputs.rampup }}"
-#         echo "Loops: ${{ github.event.inputs.loops }}"         
+        Parameters.url: https://github.com/${{github.repository}}    
