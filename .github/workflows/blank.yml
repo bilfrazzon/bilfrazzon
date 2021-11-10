@@ -37,4 +37,5 @@ jobs:
         files: 'employee.json'
       env:
         Parameters.username: ${{github.event.inputs.hostname}}
+        Parameters.threads": ${{github.event.inputs.threads}}
         Parameters.url: https://github.com/${{github.repository}}    
